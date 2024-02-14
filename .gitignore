@@ -1,2 +1,4 @@
 node_modules/
 outputs/
+custom-outputs/
+test-destination/
