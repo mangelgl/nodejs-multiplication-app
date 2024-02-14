@@ -6,22 +6,22 @@ interface RunOptions {
     limit: number;
     showTable: boolean;
     fileName: string;
-    destination: string;
+    fileDestination: string;
 }
 
 export class Server {
 
-    static run ({ base, limit, showTable, fileName, destination }: RunOptions) {
+    static run ({ base, limit, showTable, fileName, fileDestination }: RunOptions) {
         
         console.log('Server running...');
         
         const table = new CreateTable().execute({ base, limit });
-        const wasCreated = new SaveFile().execute({ fileContent: table, destination, fileName });
+        const wasCreated = new SaveFile().execute({ fileContent: table, fileDestination, fileName });
 
         if (showTable) console.log(table);
 
         ( wasCreated )
             ? console.log('File created!')
-            : console.log('File not created!');
+            : console.error('File not created!');
     }
 }

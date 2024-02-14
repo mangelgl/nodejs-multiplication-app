@@ -17,5 +17,5 @@ console.log(yarg.b); */
 async function main() {
     const { b:base, l:limit, s:showTable, f:fileName, d:destination } = yarg;
 
-    Server.run( { base, limit, showTable, fileName, destination } );
+    Server.run( { base, limit, showTable, fileName, fileDestination: destination } );
 }
