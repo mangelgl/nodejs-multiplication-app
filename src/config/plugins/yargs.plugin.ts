@@ -37,6 +37,18 @@ export const yarg = yargs( hideBin(process.argv) )
         demandOption: false,
         describe: 'Muestra la tabla de multiplicar en consola'
     })
+    .option('f', {
+        alias: 'fileName',
+        type: 'string',
+        default : 'table',
+        describe: 'Nombre del archivo'
+    })
+    .option('d', {
+        alias: 'destination',
+        type: 'string',
+        default: './outputs',
+        describe: 'Ubicación del archivo'
+    })
     .check( (argv, options) => {
         
         if ( argv.b < 1) throw 'Error: base must be greater than 0';        
